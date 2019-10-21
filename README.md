@@ -1,2 +1,2 @@
-# sql_tutorial
+# SQL Tutorial
 MySQL Database
