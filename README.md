@@ -16,6 +16,8 @@ create table student(
   subject varchar(20)
   );
 
+describe student;                                                   # Get the details of student table
+drop table student;                                                 # Delete the Table student
 
 
 
