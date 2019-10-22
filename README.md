@@ -8,6 +8,14 @@ flush privileges;
 
 set password for 'username'@'localhost' = 'new_password';           # Set new password
 
+create database school;                                             
+                                      
+create table student( 
+  student_id int primary key,
+  name varchar(20),
+  subject varchar(20)
+  );
+
 
 
 
