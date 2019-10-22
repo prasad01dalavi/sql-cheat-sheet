@@ -25,6 +25,21 @@ Note: decimal(3.2) ==> -9.99 to 9.99
 alter table student drop column gpa;                                # Drop gpa column of student table
 drop table student;                                                 # Delete the Table student
 
+insert into student values(1, 'Prasad', "Data Science");            # Insert Data into table (inserted sequentially)
+insert into student(student_id, name) values(3, 'Pranit');          # Enter specific info (Here, Subject will be Null)
+
+# Though default sequence has been changed, the value mapping is correct below 
+insert into student(subject, student_id, name) values('Physics', 4, 'Pranit');
+
+name varchar(20) not null,                                          # Declare not to be null (is a constraint)
+subject varchar(20) unique,                                         # Unique field (can not have duplicate entry)
+# Note: Primary Key is by default not null and unique 
+
+name varchar(20) default 'not decided',                             # Declare a default value for name field
+student_id int primary key auto_increment                           # Make the field as primary and auto incremental
+
+
+
 
 
 
