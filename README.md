@@ -17,7 +17,15 @@ create table student(
   subject varchar(20)
   );
 
-describe student;                                                   # Get the details of student table
+# Few Constraints
+name varchar(20) not null,                                          # Declare not to be null
+subject varchar(20) unique,                                         # Unique field (can not have duplicate entry)
+# Note: Primary Key is by default not null and unique 
+
+name varchar(20) default 'not decided',                             # Declare a default value for name field
+student_id int primary key auto_increment                           # Make the field as primary and auto incremental
+
+describe student;                                                   # Get the schema details of student table
 
 alter table student add gpa decimal(3,2);                           # Modify table schema (3 is precision, 2 is scale)
 Note: decimal(3.2) ==> -9.99 to 9.99
@@ -31,12 +39,16 @@ insert into student(student_id, name) values(3, 'Pranit');          # Enter spec
 # Though default sequence has been changed, the value mapping is correct below 
 insert into student(subject, student_id, name) values('Physics', 4, 'Pranit');
 
-name varchar(20) not null,                                          # Declare not to be null (is a constraint)
-subject varchar(20) unique,                                         # Unique field (can not have duplicate entry)
-# Note: Primary Key is by default not null and unique 
+update student set subject='DS' where subject='Data Science';       # Update the value in row from Data Science to DS
 
-name varchar(20) default 'not decided',                             # Declare a default value for name field
-student_id int primary key auto_increment                           # Make the field as primary and auto incremental
+# sudo update syntax
+where subject='Data Science' OR subject='Biology' ;                 # Check any of the condition and set the value
+set name='Tom', subject='CS' where student_id=1;                    # set name and subject where student id = 1
+set subject='CS';                                                   # Set all record field value to CS
+
+delete from student;                                                # Delete all records of student table
+delete from student where name='Prasad';                            # Delete the matched record
+
 
 
 
