@@ -53,6 +53,10 @@ select column_name from table;                                      # Get column
 select subject, name from student order by subject desc;            # Get two columns by descending order of subject 
 select * from student order by student_id desc limit 1;             # Get only 1 row also order student_id by desc
 select name from student where subject = 'Python';                  # Get specific rows  (other sudo logics are also applied)
+select * from student where subject in ('Data Science', 'Python');  # if subject is in the provided tuple 
+
+# can also apply other conditions 
+select * from student where subject in ( 'Python') and student_id = 1 ;
 
 
 
