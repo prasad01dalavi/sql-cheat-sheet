@@ -49,6 +49,11 @@ set subject='CS';                                                   # Set all re
 delete from student;                                                # Delete all records of student table
 delete from student where name='Prasad';                            # Delete the matched record
 
+select column_name from table;                                      # Get column info (* to get all info)
+select subject, name from student order by subject desc;            # Get two columns by descending order of subject 
+select * from student order by student_id desc limit 1;             # Get only 1 row also order student_id by desc
+select name from student where subject = 'Python';                  # Get specific rows  (other sudo logics are also applied)
+
 
 
 
