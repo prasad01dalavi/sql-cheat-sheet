@@ -54,6 +54,17 @@ select subject, name from student order by subject desc;            # Get two co
 select * from student order by student_id desc limit 1;             # Get only 1 row also order student_id by desc
 select name from student where subject = 'Python';                  # Get specific rows  (other sudo logics are also applied)
 select * from student where subject in ('Data Science', 'Python');  # if subject is in the provided tuple 
+select name as student_name from student;                           # rename the column name to student_name while displaying
+select distinct subject from student;                               # list of distinct subjects from student
+
+# Functions
+select count(student_id) from student;                              # Get the count of student id
+select avg(salary) from employee;                                   # Get the average
+select sum(salary) from employee;                                   # Get the sum of salaries
+
+select * from student where subject like 'Data%';                   # % match any string, _ match any character
+
+
 
 # can also apply other conditions 
 select * from student where subject in ( 'Python') and student_id = 1 ;
