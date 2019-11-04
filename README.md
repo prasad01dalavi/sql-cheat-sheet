@@ -8,7 +8,9 @@ flush privileges;
 
 set password for 'username'@'localhost' = 'new_password';           # Set new password
 
-create database school;                                             # Create database student                                  
+create database school;                                             # Create database student   
+
+sudo vim  /etc/mysql/mysql.conf.d/mysqld.cnf                        # Make mysql accessible from other network
                    
 # Create table student with defining the schema 
 create table student( 
