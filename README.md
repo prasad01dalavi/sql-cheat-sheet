@@ -4,7 +4,15 @@ MySQL Database
 ```
 create user 'username'@'localhost' identified by 'password';        # Create User
 grant all on *.* to 'username'@'localhost';                         # Grant permission for all
-flush privileges;                                                   
+flush privileges;  
+
+# Allow remote user to connect 
+netstat -ln | grep 3306                                             # Check the status
+sudo mysql                                                          # Because, permissions can be granted by becoming root
+SELECT host FROM mysql.user WHERE User = 'prasad';                  # Get the list of Users allowed to connect (IP list)
+CREATE USER 'user'@'<remote_ip>' IDENTIFIED BY 'user_password';     # Create (remote) user who is going to access mysql
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'<remote_ip>';                # Grant permissions to user to access mysql
+FLUSH PRIVILEGES;
 
 set password for 'username'@'localhost' = 'new_password';           # Set new password
 
