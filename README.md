@@ -1,4 +1,4 @@
-# SQL Tutorial
+# SQL Cheat Sheet
 MySQL Database
 
 ```
